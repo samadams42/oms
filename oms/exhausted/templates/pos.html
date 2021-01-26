@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="card-header">
+            <h5>Inventory Transactions</h5>
+        </div>
+
+    </div>
+    <div class="row row-group m-4">
+            <div class="card col-2 m-2 float-none mb-10">
+                <div class="card-content text-center mx-auto">
+                    <a href="{% url 'select_driver' 2 %}">
+                    <div class="card-body">
+                        <h5 class="text-white mb-0">Check Out <span class="float-right"></span></h5>
+                    </div>
+                        </a>
+                </div>
+            </div>
+
+        <div class="card col-2 m-2">
+            <div class="card-content text-center mx-auto">
+                <a href="{% url 'select_driver' 3 %}">
+                <div class="card-body">
+                    <h5 class="text-white mb-0">Check In <span class="float-right"></span></h5>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="card col-2 m-2">
+            <div class="card-content text-center mx-auto">
+                <a href="{% url 'select_driver' 1 %}">
+                <div class="card-body">
+                    <h5 class="text-white mb-0">Reconcile <span class="float-right"></span></h5>
+                </div>
+                    </a>
+            </div>
+        </div>
+        <div class="card col-2 m-2">
+            <div class="card-content text-center mx-auto">
+                <a href="{% url 'select_driver' 6 %}">
+                <div class="card-body">
+                    <h5 class="text-white mb-0">Order <span class="float-right"></span></h5>
+                </div>
+                    </a>
+            </div>
+        </div>
+    </div>
+    <div class="row m-4">
+        <div class="col-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">Inventory Transactions
+                    <div class="card-action">
+                        <div class="dropdown">
+                            <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret"
+                               data-toggle="dropdown">
+                                <i class="icon-options"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="javascript:void();">Export</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush table-borderless">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Item Number</th>
+                            <th>Item Type</th>
+                            <th>Completed By</th>
+                            <th>Driver</th>
+                            <th># of Parts</th>
+                            <th>Amount</th>
+                            <th>Manage</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for tx in txs %}
+                            {% if tx.total_cost != None %}
+                            <tr>
+                                <td><a href="/pos/inv_req/{{ tx.txID }}">{{ tx.txId }}</a></td>
+                                <td>{{ tx.date }}</td>
+                                <td>{{ tx.txNumber }}</td>
+                                <td>{{ tx.typeId.type }}</td>
+                                <td>{{ tx.userId.first_name }} {{ tx.userId.last_name }}</td>
+                                <td>{{ tx.driverId.firstName }} {{ tx.driverId.lastName }}</td>
+                                <td>{{ tx.parttransactiondetail_set.count }}</td>
+                                <td>{{ tx.total_cost }}
+                                <td>
+                                 <div class="dropdown">
+                            <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret"
+                               data-toggle="dropdown">
+                                <i class="icon-options"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                {% if user.is_staff %}
+                                <a class="dropdown-item" href="{% url 'inv_req' tx.txId %}">Edit</a>
+                                    {% endif %}
+                                <a class="dropdown-item" href="{% url 'inv_exp' tx.txId %}">Export</a>
+                            </div>
+                        </div>
+                                </td>
+                            </tr>
+                            {% endif %}
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

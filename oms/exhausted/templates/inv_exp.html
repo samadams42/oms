@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+Order #: {{ tx.txNumber }}<br>
+Driver: {{ tx.driverId.firstName }} {{ tx.driverId.lastName }}<br>
+Fulfilled By: {{ tx.userId.first_name }} {{ tx.userId.last_name }}<br>
+
+
+        <div class="float-left mt-5">Order Date: {{ tx.date }}</div>
+        <div class="float-right mt-5">Order Total $ {{ tx.total_cost }}</div>
+
+<br>
+<br>
+<table class="table align-items-center table-flush table-borderless">
+    <thead>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Cost/Part</th>
+        <th>Qty</th>
+        <th>Cost</th>
+    </thead>
+    <tbody>
+    {% for item in details %}
+        <tr>
+            <td span="col">{{ item.partId.partNo }}</td>
+            <td>{{ item.partId.partDesc }}</td>
+            <td>{{ item.partId.partCost }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.cost }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

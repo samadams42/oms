@@ -1,0 +1,56 @@
+{% extends 'auth.html' %}
+
+{% block content %}
+
+<div class="loader-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+	<div class="card card-authentication1 mx-auto my-5">
+		<div class="card-body">
+		 <div class="card-content p-2">
+		 	<div class="text-center">
+		 		<a class="" href="https://www.darylflood.com/" target="_blank"><img src="https://www.darylflood.com/wp-content/themes/darylflood/images/logo.png" title="Logo" alt="Logo" width="200"></a>
+		 	</div>
+		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
+		    <form method="POST">
+                {% csrf_token %} <!-- cross site request forgery token -->
+			  <div class="form-group">
+			  <label for="username" class="sr-only">Username</label>
+			   <div class="position-relative has-icon-right">
+                   {{ form.username }}
+				  <!-- <input type="text" id="exampleInputUsername" class="form-control input-shadow" placeholder="Enter Username">-->
+				  <div class="form-control-position">
+					  <i class="icon-user"></i>
+				  </div>
+			   </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="password" class="sr-only">Password</label>
+			   <div class="position-relative has-icon-right">
+                   {{ form.password }}
+				  <!-- <input type="password" id="exampleInputPassword" class="form-control input-shadow" placeholder="Enter Password">-->
+				  <div class="form-control-position">
+					  <i class="icon-lock"></i>
+				  </div>
+			   </div>
+			  </div>
+			<div class="form-row">
+			 <div class="form-group col-6">
+			   <div class="icheck-material-white">
+                <input type="checkbox" id="user-checkbox" checked="" />
+                <label for="user-checkbox">Remember me</label>
+			  </div>
+			 </div>
+			 <div class="form-group col-6 text-right">
+			  <a href="javascript:void();">Reset Password</a>
+			 </div>
+			</div>
+			 <button type="submit" class="btn btn-light btn-block">Sign In</button>
+			</div>
+			 <div class="card-footer text-center py-3">
+		    <p class="text-warning mb-0">Don't have an account? <a href="{% url 'register_vw' %}"> Sign Up Here</a></p>
+		  </div>
+			 </form>
+		   </div>
+		  </div>
+
+	     </div>
+{% endblock %}

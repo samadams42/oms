@@ -1,0 +1,29 @@
+{% extends 'auth.html' %}
+
+{% block content %}
+
+<div class="loader-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+	<div class="card card-authentication1 mx-auto my-5">
+		<div class="card-body">
+		 <div class="card-content p-2">
+		 	<div class="text-center">
+		 		<a class="" href="https://www.darylflood.com/" target="_blank"><img src="https://www.darylflood.com/wp-content/themes/darylflood/images/logo.png" title="Logo" alt="Logo" width="200"></a>
+		 	</div>
+                 <div class="m-2 alert alert-light text-white alert-dismissible" role="alert">
+                 <div class="alert-icon m-2">
+                  <i class="icon-check m-2"></i>
+                 </div>
+                 <div class="alert-message m-2">
+                   <span><strong>Success!</strong> User has been created successfully. Please confirm your email address before logging in.</span>
+                 </div>
+               </div>
+			</div>
+			 <div class="card-footer text-center py-3">
+		    <p class="text-warning mb-0">Already confirmed? <a href="{% url 'login_vw' %}"> Login Now</a></p>
+		  </div>
+			 </form>
+		   </div>
+		  </div>
+
+	     </div>
+{% endblock %}

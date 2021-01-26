@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row float-right">
+        <input type="submit" value="Export" class="btn btn-primary m-3 ">
+    </div>
+    <div class="row d-inline">
+    <h5 class="m-1">Weekly Driver Summary</h5><br>
+    <h6 class="m-0">Driver: Eric Whitaker</h6><br>
+    <h6 class="m-0">Week #: 06</h6>
+    </div>
+
+    <div class="row m-3">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>1/9/2020</th>
+                        <th>1/10/2020</th>
+                        <th>1/11/2020</th>
+                        <th>1/12/2020</th>
+                        <th>1/13/2020</th>
+                        <th>1/14/2020</th>
+                        <th>1/15/2020</th>
+                        <th>Quantity</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for part in parts %}
+                    <tr>
+                        <td>{{ part.partNo }}</td>
+                        <td>{{ part.partDesc }}</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>{{ part.quantity_february }}</td>
+                        <td>{{ part.cost_february }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="app">
+        <div class="row">
+            <div class="card-body">
+                <h6>Tx #: {{ tx.txNumber }}</h6>
+                <h5>Driver: {{ driver.firstName }} {{ driver.lastName }}</h5>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="float-left">Total: $ {{ total }}</p>
+
+                        <button class="btn btn-primary float-right" onclick="location.href= {% url 'pos' %}">Submit</button>
+                        <a href="#" class="float-right m-3 my-auto">Print</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Part</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col">Manage</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in tx_list %}
+                                    <tr>
+                                        <td>{{ item.partId.partNo }}<br>{{ item.partId.partDesc }}</td>
+                                        <td>{{ item.quantity }}</td>
+                                        <td>{{ item.cost }}</td>
+                                        <td><a href="{% url 'inv_req_delete' item.txId_id item.partId_id  %}">X</a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
+                            <li class="nav-item">
+                                <a href="javascript:void();" data-target="#allparts" data-toggle="pill"
+                                   class="nav-link active"><span
+                                        class="hidden-xs">All Inventory</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void();" data-target="#geparts" data-toggle="pill" class="nav-link"> <span class="hidden-xs">GE Parts</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void();" data-target="#arrowparts" data-toggle="pill"
+                                   class="nav-link"> <span class="hidden-xs">Arrow Parts</span></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content p-3">
+                            <!--/row-->
+                            <div class="tab-pane active text-center" id="allparts">
+<div class="row d-inline-flex">
+                                    {% for part in parts %}
+                                        {% csrf_token %}
+                                        <form method="post" onsubmit="" class="m-2">
+                                                <button name="part" class="card" style="width:200px; height:150px;" type="submit"
+                                                        value="{{ part.partId }}">
+                                                    <div class="text-white">
+                                                        <div class="card-header">
+                                                            <div class="float-left">
+                                                                {{ part.partNo }}</div>
+                                                            <div class="float-right">
+                                                                {{ part.partCost }}</div><br>
+                                                        </div>
+                                                        <div class="card-body">
+                                                        {{ part.partDesc }}
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                        </form>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="geparts">
+                                <div class="row d-inline-flex">
+                                    {% for part in parts %}
+                                        {% csrf_token %}
+                                        {% if part.supplierId_id == 2 %}
+                                        <form method="post" onsubmit="" class="m-2">
+                                                <button name="part" class="card" style="width:200px; height:150px;" type="submit"
+                                                        value="{{ part.partId }}">
+                                                    <div class="text-white">
+                                                        <div class="card-header">
+                                                            <div class="float-left">
+                                                                {{ part.partNo }}</div>
+                                                            <div class="float-right">
+                                                                {{ part.partCost }}</div><br>
+                                                        </div>
+                                                        <div class="card-body">
+                                                        {{ part.partDesc }}
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                        </form>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        <div class="tab-pane" id="arrowparts">
+                            <div class="row d-inline-flex">
+                                    {% for part in parts %}
+                                        {% csrf_token %}
+                                        {% if part.supplierId_id == 1 %}
+                                        <form method="post" onsubmit="" class="m-2">
+                                                <button name="part" class="card" style="width:200px; height:150px;" type="submit"
+                                                        value="{{ part.partId }}">
+                                                    <div class="text-white">
+                                                        <div class="card-header">
+                                                            <div class="float-left">
+                                                                {{ part.partNo }}</div>
+                                                            <div class="float-right">
+                                                                {{ part.partCost }}</div><br>
+                                                        </div>
+                                                        <div class="card-body">
+                                                        {{ part.partDesc }}
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                        </form>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

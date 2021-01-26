@@ -1,0 +1,29 @@
+{% extends 'inventory.html' %}
+{% block details %}
+    <div class="text-center" style="height:80vh;">
+        {% csrf_token %}
+        <img src="/static/assets/images/parts/{{ image }}" class="img-thumbnail m-3" width="200px">
+        <div class="form-group text-left">
+            <label for="supplierId" class="form-control-label">Part Supplier</label>
+            <input type="text" class="form-control readonly" value="{{ obj.supplierId.name }}" disabled>
+        </div>
+        <div class="form-group text-left">
+            <label for="supplierId" class="form-control-label">Part Number</label>
+            <input type="text" class="form-control readonly" value="{{ obj.partNo}}" disabled>
+        </div>
+        <div class="form-group text-left">
+            <label for="supplierId" class="form-control-label">Part Name</label>
+            <input type="text" class="form-control readonly" value="{{ obj.partDesc}}" disabled>
+        </div>
+        <div class="form-group text-left">
+            <label for="supplierId" class="form-control-label">Cost/Part</label>
+            <input type="text" class="form-control readonly" value="{{ obj.supplierId_id }}" disabled>
+        </div>
+        <div class="form-group text-left">
+            <label for="supplierId" class="form-control-label">On Hand</label>
+            <input type="text" class="form-control readonly" value="{{ obj.quantity }}" disabled>
+        </div>
+        <a href="#">Print Barcode</a> |
+        <a href="{% url 'inv_edit' obj.partId %}">Edit</a>
+    </div>
+{% endblock details %}

@@ -1,0 +1,29 @@
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if list %}
+            {% for product in list %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ currency }}{{ product.price }}</td>
+                <td>
+                    <a role="button" class="btn btn-danger"
+		                 href="javascript:void(0);" onclick='removeProduct("{{ product.id }}");'>X</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            <tr>
+                <th scope="row">Total</th>
+                <td>{{ currency }}{{ total_price }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>

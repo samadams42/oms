@@ -1,0 +1,411 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class="row mt-3">
+        <div class="col-lg-4">
+            <div class="card profile-card-2">
+                <div class="card-body pt-5 text-center">
+
+                    <img src="/static/assets/images/Gary.jpg" id="myimage" alt="profile-image" class="pb-2"
+                         width="200">
+                    <h5 class="card-title" id="driverName">Gary Vaughn</h5>
+                    <p class="card-text" id="driverType">Independent Contractor</p>
+                    <p class="card-text" id="location">Lubbock, TX</p>
+                </div>
+
+                <div class="card-body border-top border-light">
+                    <div class="media align-items-center">
+                        <div><img src="/static/assets/images/Ellipse 3.svg" class="skill-img" alt="skill img"></div>
+                        <div class="media-body text-left ml-3">
+                            <div class="progress-wrapper">
+                                <p>Driver's License <span id="expirationDateDL" class="float-right">01/01/2022</span>
+                                </p>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar" style="width:90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="media align-items-center">
+                        <div><img src="/static/assets/images/Ellipse 2.svg" class="skill-img" alt="skill img"></div>
+                        <div class="media-body text-left ml-3">
+                            <div class="progress-wrapper">
+                                <p>TLDR <span id="expirationDateTLDR" class="float-right">01/01/2021</span></p>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar" style="width:50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="media align-items-center">
+                        <div><img src="/static/assets/images/Ellipse 1.svg" class="skill-img" alt="skill img"></div>
+                        <div class="media-body text-left ml-3">
+                            <div class="progress-wrapper">
+                                <p>DOT Physical<span id="expirationDateDOT" class="float-right">01/01/2021</span></p>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar" style="width:33%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="media align-items-center">
+                        <div><img src="/static/assets/images/Ellipse 3.svg" class="skill-img" alt="skill img"></div>
+                        <div class="media-body text-left ml-3">
+                            <div class="progress-wrapper">
+                                <p>GE Badge<span id="expirationDateGE" class="float-right">01/01/2022</span></p>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar" style="width:90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-8">
+            <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <div class="alert-icon">
+                    <i class="icon-info"></i>
+                </div>
+                <div class="alert-message">
+                    <span><strong>Warning!</strong> Driver is close to hours of service maximum.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#profile" data-toggle="pill"
+                               class="nav-link active"><i class="icon-user"></i> <span class="hidden-xs">Profile</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#compliance" data-toggle="pill"
+                               class="nav-link"><i class="icon-info"></i> <span class="hidden-xs">Compliance</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#hours" data-toggle="pill" class="nav-link"><i
+                                    class="icon-list"></i> <span class="hidden-xs">Hours of Service</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#parts" data-toggle="pill" class="nav-link "><i
+                                    class="icon-settings"></i> <span class="hidden-xs">Parts</span></a>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content p-3">
+                        <div class="tab-pane active" id="profile">
+                            <h5 class="mb-3">Driver Profile</h5>
+                            <form>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Driver ID</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="DF603">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Driver Name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="Gary Vaughn">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="gvaughn@darylflood.com">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Phone</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="(555)555-5555">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="1234 Somewhere Lane"
+                                               placeholder="Street">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-5">
+                                        <input class="form-control" type="text" value="Lubbock" placeholder="City">
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <input class="form-control" type="text" value="TX" placeholder="State">
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <input class="form-control" type="text" value="79424" placeholder="Zip">
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-9">
+                                        <input type="reset" class="btn btn-secondary" value="Cancel">
+                                        <input type="button" class="btn btn-primary" value="Save Changes">
+                                    </div>
+                                </div>
+                                -->
+                            </form>
+                            <!--/row-->
+                        </div>
+                        <div class="tab-pane" id="hours">
+                            <div class="form-group row">
+                                <div class="col-lg row">
+                                    <input class="form-control col-lg-5" type="week" name="week" id="week" min="2019-W1"
+                                           max="2020-W52">
+
+                                </div>
+                                <div class="col-lg-4 float-right row">
+                                    <h6>Total Hours: 144 </h6>
+                                    <input type="button" class="btn btn-primary ml-3" value="Export">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Trailer</td>
+                                        <td>Out</td>
+                                        <td>In</td>
+                                        <td>Total Hours</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>01/13/2020
+                                        </td>
+                                        <td>DF613
+                                        </td>
+                                        <td>06:00:00
+                                        </td>
+                                        <td>18:00:00
+                                        </td>
+                                        <td>12
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01/14/2020
+
+                                        </td>
+                                        <td>DF613
+
+                                        </td>
+                                        <td>06:00:00
+
+                                        </td>
+                                        <td>18:00:00
+
+                                        </td>
+                                        <td>12
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01/15/2020
+
+                                        </td>
+                                        <td>DF613
+
+                                        </td>
+                                        <td>06:00:00
+
+                                        </td>
+                                        <td>18:00:00
+
+                                        </td>
+                                        <td>12
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01/16/2020
+
+                                        </td>
+                                        <td>DF613
+
+                                        </td>
+                                        <td>06:00:00
+
+                                        </td>
+                                        <td>18:00:00
+
+                                        </td>
+                                        <td>12
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01/17/2020
+
+                                        </td>
+                                        <td>DF613
+
+                                        </td>
+                                        <td>06:00:00
+
+                                        </td>
+                                        <td>18:00:00
+
+                                        </td>
+                                        <td>12
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01/18/2020
+
+                                        </td>
+                                        <td>DF613
+
+                                        </td>
+                                        <td>06:00:00
+
+                                        </td>
+                                        <td>18:00:00
+
+                                        </td>
+                                        <td>12
+
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="compliance">
+                            <h5>Driver's License</h5>
+                            <form>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">State</label>
+                                    <div class="col-lg-2">
+                                        <input class="form-control" type="text" value="TX">
+                                    </div>
+                                    <label class="col-lg-3 col-form-label form-control-label">Class</label>
+                                    <div class="col-lg-2">
+                                        <input class="form-control" type="text" value="CDL">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">License No.</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="23302320">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Issue Date</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="11/02/2018">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Expiration Date</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="11/02/2024">
+                                    </div>
+                                </div>
+                                <br>
+                                <h5>Compliance</h5>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">TLDR</label>
+                                    <div class="col-lg-4">
+                                        <input class="form-control" type="text" value="01/01/2020">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <input class="form-control" type="text" value="01/01/2021">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">DOT Physical</label>
+                                    <div class="col-lg-4">
+                                        <input class="form-control" type="text" value="01/01/2018">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <input class="form-control" type="text" value="01/01/2021">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">GE Badge</label>
+                                    <div class="col-lg-4">
+                                        <input class="form-control" type="text" value="01/01/2018">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <input class="form-control" type="text" value="01/01/2021">
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="parts">
+                            <div class="form-group row">
+                                <div class="col-lg row">
+                                    <input class="form-control col-lg-5" type="week" name="week" id="week" min="2019-W1"
+                                           max="2020-W52">
+
+                                </div>
+                                <div class="col float-right row">
+                                    <input type="button" class="btn btn-primary ml-3" value="Export">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                    <tr>
+                                        <td>Part #</td>
+                                        <td>1/9/2020</td>
+                                        <td>1/10/2020</td>
+                                        <td>1/11/2020</td>
+                                        <td>1/12/2020</td>
+                                        <td>1/13/2020</td>
+                                        <td>1/14/2020</td>
+                                        <td>1/15/2020</td>
+                                        <td>Qty</td>
+                                        <td>Cost</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for part in parts %}
+                                        <tr>
+                                        <td>{{ part.partNo }}</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>7</td>
+                                        <td>$ 49.00</td>
+                                        </tr>
+
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+{% endblock %}
+

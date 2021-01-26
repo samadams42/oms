@@ -1,0 +1,38 @@
+{% extends 'inventory.html' %}
+
+{% block details %}
+{% load static %}
+    <div class="p-3" style="height:80vh;">
+        {% csrf_token %}
+        <form method="POST" class="text-center pl-2 pr-2" style="height:80vh;">
+            <input type="image"id="image" alt="Part Image" src="{% static 'assets/images/parts/noPhotoFound.png' %}"class="img-thumbnail m-3" width="200px">
+            <div class="form-group text-left">
+                {{ form.partId.label }}
+                {{ form.partId }}
+            </div>
+
+            <div class="form-group text-left">
+                {{ form.supplierId.label }}
+                {{ form.supplierId }}
+            </div>
+            <div class="form-group text-left">
+                {{ form.partNo.label }}
+                {{ form.partNo }}
+            </div>
+            <div class="form-group text-left">
+                {{ form.partDesc.label }}
+                {{ form.partDesc }}
+            </div>
+            <div class="form-group inline-group text-left">
+                {{ form.partCost.label }}
+                {{ form.partCost }}
+            </div>
+            <div class="form-group text-left">
+                {{ form.partQty.label }}
+                {{ form.partQty }}
+            </div>
+            <input type="submit" value="Save" class="btn btn-primary">
+            <a href="{% url 'inventory' %}" class=" btn btn-outline-primary">Cancel </a>
+        </form>
+    </div>
+{% endblock details %}

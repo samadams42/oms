@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card mt-3">
+            <div class="card-content">
+                <div class="row row-group m-0">
+                    <div class="col-12 col-lg-6 col-xl-3 border-light">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">9526 <span class="float-right"><i
+                                    class="fa fa-gears"></i></span></h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font">Total Installations <span class="float-right">+4.2% <i
+                                    class="zmdi zmdi-long-arrow-up"></i></span></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-3 border-light">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">$734,286 <span class="float-right"><i
+                                    class="fa fa-usd"></i></span></h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font">Total Revenue <span class="float-right">+1.2% <i
+                                    class="zmdi zmdi-long-arrow-up"></i></span></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-3 border-light">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">6200 <span class="float-right"><i
+                                    class="fa fa-battery"></i></span></h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font">Total Parts Used<span class="float-right">+5.2% <i
+                                    class="zmdi zmdi-long-arrow-up"></i></span></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-3 border-light">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">5630 <span class="float-right"><i
+                                    class="fa fa-arrows-h"></i></span>
+                            </h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font"> Total Cost <span class="float-right">+2.2% <i
+                                    class="zmdi zmdi-long-arrow-up"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-8 col-xl-8">
+                <div class="card">
+                    <div class="card-header">Part Reconciliation Cost for Location
+                        <div class="card-action">
+                            <div class="dropdown">
+                                <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret"
+                                   data-toggle="dropdown">
+                                    <i class="icon-options"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="javascript:void();">Action</a>
+                                    <a class="dropdown-item" href="javascript:void();">Another action</a>
+                                    <a class="dropdown-item" href="javascript:void();">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void();">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-circle mr-2 text-white"></i>2019
+                            </li>
+                            <li class="list-inline-item"><i class="fa fa-circle mr-2 text-light"></i>2018
+                            </li>
+                        </ul>
+                        <div class="chart-container-1">
+                            <canvas id="chart1"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 row-group text-center border-top border-light-3">
+                        <div class="col-12 col-lg-4">
+                            <div class="p-3">
+                                <h5 class="mb-0">4,587</h5>
+                                <small class="mb-0">Part Usage <span> <i
+                                        class="fa fa-arrow-up"></i> 2.43%</span></small>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="p-3">
+                                <h5 class="mb-0">$64,832</h5>
+                                <small class="mb-0">Part Cost <span> <i
+                                        class="fa fa-arrow-up"></i> 5.38%</span></small>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="p-3">
+                                <h5 class="mb-0">$7,324</h5>
+                                <small class="mb-0">Reconciliation Cost <span> <i
+                                        class="fa fa-arrow-up"></i> -3.24%</span></small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4 col-xl-4">
+                <div class="card">
+                    <div class="card-header">Part Usage
+                        <div class="card-action">
+                            <div class="dropdown">
+                                <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret"
+                                   data-toggle="dropdown">
+                                    <i class="icon-options"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="javascript:void();">Washer & Dryer</a>
+                                    <a class="dropdown-item" href="javascript:void();">Refrigerator</a>
+                                    <a class="dropdown-item" href="javascript:void();">Range</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void();">Other</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container-2">
+                            <canvas id="chart2"></canvas>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center">
+                            <tbody>
+                            <tr>
+                                <td><i class="fa fa-circle text-white mr-2"></i> Washer & Dryer</td>
+                                <td>$5856</td>
+                                <td>+55%</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-circle text-light-1 mr-2"></i>Refrigerator</td>
+                                <td>$2602</td>
+                                <td>+25%</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-circle text-light-2 mr-2"></i>Range</td>
+                                <td>$1802</td>
+                                <td>+15%</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-circle text-light-3 mr-2"></i>Other</td>
+                                <td>$1105</td>
+                                <td>+5%</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Row-->
+
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">Recent Order Tables
+                        <div class="card-action">
+                            <div class="dropdown">
+                                <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret"
+                                   data-toggle="dropdown">
+                                    <i class="icon-options"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="javascript:void();">Action</a>
+                                    <a class="dropdown-item" href="javascript:void();">Another action</a>
+                                    <a class="dropdown-item" href="javascript:void();">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void();">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush table-borderless">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Ordered By</th>
+                                <th>Date</th>
+                                <th>Shipping</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for part in parts %}
+                                    <tr>
+                                        <td>{{ part.partNo }}</td>
+                                        <td>{{ part.partDesc }}</td>
+                                        <td>{{ part.partCost }}</td>
+                                        <td>Jonathan Mhoon</td>
+                                        <td> Jan. 12, 2020 8:42 AM </td>
+                                        <td><div class="progress shadow" style="height: 3px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+                                        </div></td>
+                                    </td>
+                            </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

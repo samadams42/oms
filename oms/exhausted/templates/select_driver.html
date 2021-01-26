@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class=" m-3 form-header">
+            <h5>New Request</h5>
+        </div>
+    </div>
+    <div class="col">
+            <div class="card" >
+                <div class="card-body">
+                    <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#driver" data-toggle="pill"
+                               class="nav-link active"><i class="icon-user"></i> <span class="hidden-xs">Driver</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#bin" data-toggle="pill"
+                               class="nav-link"><i class="icon-info"></i> <span class="hidden-xs">Bin</span></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content p-3">
+                        <div class="tab-pane active text-center" id="allparts">
+                                <div class="row d-inline-flex">
+                                    {% for driver in drivers %}
+                                        {% csrf_token %}
+                                        <form method="post" onsubmit="" class="m-2">
+                                                <button name="part" class="card" style="width:300px; height:200px;" type="submit"
+                                                        value="{{ driver.driverId }}">
+                                                    <div class="text-white">
+                                                        <div class="card-header p-4">
+                                                                {{ driver.firstName }} {{ driver.lastName }}
+
+                                                        </div>
+                                                        <div class="card-body">
+                                                                {{ driver.driverTypeId.type }}<br>
+                                                        {{ driver.locationId }}
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                        </form>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        <div class="tab-pane" id="bin">
+                            <div class="row m-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="">Scan Bin</h5>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <form method="post" onsubmit="">
+                                            <div class="form-group row text-center">
+                                                <div class="col">
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+
+{% endblock %}

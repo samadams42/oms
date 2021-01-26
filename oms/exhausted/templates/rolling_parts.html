@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row float-right">
+        <input type="submit" value="Export" class="btn btn-primary m-3 ">
+    </div>
+    <div class="row">
+    <h5 class="float-left m-3">2020 Rolling Parts Summary</h5>
+    </div>
+
+    <div class="row m-3">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>January</th>
+                        <th>February</th>
+                        <th>March</th>
+                        <th>April</th>
+                        <th>May</th>
+                        <th>June</th>
+                        <th>July</th>
+                        <th>August</th>
+                        <th>September</th>
+                        <th>October</th>
+                        <th>November</th>
+                        <th>December</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for part in parts %}
+                    <tr>
+                        <td>{{ part.partNo }}</td>
+                        <td>{{ part.partDesc }}</td>
+                        <td>{{ part.quantity_january }}</td>
+                        <td>{{ part.quantity_february }}</td>
+                        <td>{{ part.quantity_march }}</td>
+                        <td>{{ part.quantity_april }}</td>
+                        <td>{{ part.quantity_may }}</td>
+                        <td>{{ part.quantity_june }}</td>
+                        <td>{{ part.quantity_july }}</td>
+                        <td>{{ part.quantity_august }}</td>
+                        <td>{{ part.quantity_september }}</td>
+                        <td>{{ part.quantity_october }}</td>
+                        <td>{{ part.quantity_november }}</td>
+                        <td>{{ part.quantity_december }}</td>
+                    </tr>
+                {% endfor %}
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

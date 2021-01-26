@@ -1,0 +1,10 @@
+{% load static %}
+
+{% for part in parts %}
+    <div class="block">
+    {{ part.partNo }}<br>
+    {{ part.partDesc }}<br>
+    <img src="/static/assets/images/barcodes/{{ part.partId }}.png" width="300px"><br><br><br><br>
+    </div>
+
+{% endfor %}

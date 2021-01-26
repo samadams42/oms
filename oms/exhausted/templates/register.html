@@ -1,0 +1,43 @@
+{% extends 'auth.html' %}
+{% block content %}
+<!-- Start wrapper-->
+ <div id="wrapper">
+
+	<div class="card card-authentication1 mx-auto my-4">
+		<div class="card-body">
+		 <div class="card-content p-2">
+		 	<div class="text-center">
+		 		<a class="" href="https://www.darylflood.com/" target="_blank"><img src="https://www.darylflood.com/wp-content/themes/darylflood/images/logo.png" title="Logo" alt="Logo" width="200"></a>
+		 	</div>
+		  <div class="card-title text-uppercase text-center py-3">Register</div>
+		    <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                  <div class="form-group">
+                   <div class="position-relative has-icon-right">
+                      {{ field }}
+                       {% if field.help_text %}
+                       <small style="display: none">{{ field.help_text }}</small>
+                       {% endif %}
+                    {% for error in field.errors %}
+                        <p style="color:red">{{ error }}</p>
+                        {% endfor %}
+                      <div class="form-control-position">
+                      </div>
+                   </div>
+                  </div>
+                {% endfor %}
+
+			 <button type="submit" class="btn btn-light btn-block waves-effect waves-light">Create Account</button>
+
+		  <div class="card-footer text-center py-3">
+		    <p class="text-warning mb-0">Already have an account? <a href="{% url 'login_vw' %}"> Sign In Here</a></p>
+		  </div>
+
+
+			 </form>
+		   </div>
+
+	     </div>
+
+     {% endblock %}
